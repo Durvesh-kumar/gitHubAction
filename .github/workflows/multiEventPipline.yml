@@ -15,12 +15,14 @@ on:
 
 jobs:
     on-push: # job name
+        if: github.event_name == 'push' # conditons
         runs-on: ubuntu-latest
         steps: # Steps to be executed in the job
             - name: "Running on master / test push"
               run: echo "Running on master/test push"
     
     pull-reqest-: # job name
+        if: github.event_name == 'pull_request' # conditons
         runs-on: ubuntu-latest
         steps: # Steps to be executed in the job
             - name: "Running on master / test pull request"
