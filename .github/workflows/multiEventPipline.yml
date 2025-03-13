@@ -4,14 +4,24 @@ name: "Multi event pipeline / workflows"
 # Controls when the action will run. Triggers the workflow on push some to master or production branch.
 
 on:
-    push:
+    push: # Event: Whenever a push is made to the repository
         branches:
             - master
             - test
+    
+    pull_request: # Event: Whenever a pull request is made to the repository
+        branches:
+            - master
 
 jobs:
-    hello_word: 
+    on-push: # job name
         runs-on: ubuntu-latest
-        steps:
-            - name: "Print hello world"
-              run: echo "Hello world"
+        steps: # Steps to be executed in the job
+            - name: "Running on master / test push"
+              run: echo "Running on master/test push"
+    
+    pull-reqest-: # job name
+        runs-on: ubuntu-latest
+        steps: # Steps to be executed in the job
+            - name: "Running on master / test pull request"
+              run: echo "Running on master/test pull request"
