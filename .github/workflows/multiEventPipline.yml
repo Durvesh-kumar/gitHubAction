@@ -10,7 +10,7 @@ on:
      branches:
         -master
 
-    jobes:
+    jobs:
         on_push: # job name
           runs-on: ubuntu-laterst
           steps: # Steps to be executed in the job
