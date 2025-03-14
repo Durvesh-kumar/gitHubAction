@@ -13,8 +13,6 @@ on:
         branches:
             - master
 
-    workflow_dispatch:
-
 jobs:
     on-push: # job name
         if: github.event_name == 'push' # conditons
